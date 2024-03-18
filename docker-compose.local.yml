@@ -1,0 +1,14 @@
+version: "1.0"
+
+services:
+  client:
+    container_name: react-project
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - 3011:3011
+    volumes:
+      - ./src/src:/app/src
+      - /app/node_modules

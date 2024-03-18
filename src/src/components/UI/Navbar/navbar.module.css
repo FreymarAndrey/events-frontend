@@ -1,0 +1,72 @@
+nav.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+  border-radius: 0px 0px 5px 5px;
+}
+nav.nav {
+  border-top: 4px solid var(--primary-color);
+}
+
+nav.nav div.navigation {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  gap: 30px;
+  align-items: center;
+}
+
+nav.nav div.navigation img {
+  width: 130px;
+  height: 130px;
+}
+
+nav.nav div.navigation p.text_left {
+  text-align: left;
+}
+
+nav.nav div.actions {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  gap: 10px;
+  align-items: center;
+}
+
+nav.nav div.actions div {
+  padding: 10px;
+}
+
+nav.nav div.actions div img {
+  width: 30px;
+  height: 30px;
+  filter: invert(23%) sepia(12%) saturate(2285%) hue-rotate(176deg)
+    brightness(94%) contrast(95%);
+}
+
+nav.nav div.actions button {
+  background: var(--primary-color);
+  border-radius: 8px;
+  border: none;
+  padding: 10px 20px;
+  color: var(--white-color);
+}
+
+nav.nav div.actions button:hover {
+  background-image: to right, #0218cf 0%, #4b59f8 50%, #0218cf 100%;
+}
+
+nav.nav div.actions select {
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-color);
+  padding: 5px;
+  cursor: pointer;
+}
+
+nav.nav div.actions select:hover {
+  border: 1px solid var(--text-color);
+}
