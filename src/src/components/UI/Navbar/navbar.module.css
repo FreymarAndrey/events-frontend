@@ -1,11 +1,13 @@
 nav.nav {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
     0 8px 10px -6px rgb(0 0 0 / 0.1);
   border-radius: 0px 0px 5px 5px;
+  padding: 0 40px;
 }
+
 nav.nav {
   border-top: 4px solid var(--primary-color);
 }
@@ -40,10 +42,10 @@ nav.nav div.actions div {
 }
 
 nav.nav div.actions div img {
-  width: 30px;
-  height: 30px;
-  filter: invert(23%) sepia(12%) saturate(2285%) hue-rotate(176deg)
-    brightness(94%) contrast(95%);
+  width: 25px;
+  height: 25px;
+  filter: invert(33%) sepia(42%) saturate(2731%) hue-rotate(220deg)
+    brightness(96%) contrast(103%);
 }
 
 nav.nav div.actions button {

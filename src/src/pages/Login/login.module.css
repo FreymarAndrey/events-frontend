@@ -1,0 +1,96 @@
+article.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 40px;
+}
+
+article.login div.header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 5px;
+}
+
+article.login div.header h3 {
+  font-size: 20px;
+}
+
+article.login div.header p a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+article.login div.form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+article.login div.form form.form_login div {
+  margin-bottom: 10px;
+}
+
+article.login div.form form.form_login div label {
+  font-weight: 500;
+}
+
+article.login div.form form.form_login div.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+article.login div.form form.form_login div.actions label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 40%;
+  gap: 10px;
+}
+
+article.login div.form form.form_login div input {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #d9d9d9;
+}
+
+article.login div.form form.form_login div.actions label input {
+  width: auto;
+}
+
+article.login div.form form.form_login div.actions div {
+  display: flex;
+  gap: 10px;
+  margin: 0;
+}
+
+article.login div.form form.form_login div.actions div a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+article.login div.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+article.login div.buttons button.cod {
+  background: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  color: var(--white-color);
+  padding: 10px 20px;
+}
+
+article.login div.buttons button.start {
+  background: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  color: var(--white-color);
+  padding: 10px 20px;
+}

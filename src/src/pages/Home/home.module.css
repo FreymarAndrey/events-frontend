@@ -1,0 +1,120 @@
+article.article_home section.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+article.article_home section.header h3 {
+  font-size: 24px;
+}
+
+article.article_home section.header p {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+article.article_home section.time {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+article.article_home section.time div {
+  width: 75%;
+  display: flex;
+  justify-content: end;
+}
+
+article.article_home section.content_card {
+  display: grid;
+  grid-template-columns: repeat(4, 280px);
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 80px;
+  gap: 10px;
+}
+
+article.article_home section.content_card div.card {
+  position: relative;
+  width: 280px;
+  margin: 0 auto;
+}
+
+article.article_home section.content_card div.card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+article.article_home section.content_card div.card a div.img img {
+  overflow: hidden;
+  width: 280px;
+  height: 280px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+article.article_home section.content_card div.card a div.description {
+  position: absolute;
+  top: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 40%,
+    rgba(0, 0, 0, 0.6) 70%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  border-radius: 0 0 8px 8px;
+  width: 279px;
+  height: 100%;
+}
+
+article.article_home section.content_card div.card a div.description div.info {
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+  color: var(--white-color);
+}
+
+article.article_home
+  section.content_card
+  div.card
+  a
+  div.description
+  div.info
+  h4 {
+  font-weight: 500;
+  font-size: 26px;
+}
+
+article.article_home
+  section.content_card
+  div.card
+  a
+  div.description
+  div.info
+  p {
+  font-size: 16px;
+}
+
+article.article_home section.reload {
+  display: flex;
+  justify-content: center;
+}
+
+article.article_home section.reload img {
+  width: 30px;
+  height: 30px;
+}
+
+article.article_home section.load {
+  display: flex;
+  justify-content: center;
+}
+
+article.article_home section.load div button {
+  background: var(--primary-color);
+  color: var(--white-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
