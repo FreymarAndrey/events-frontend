@@ -21,8 +21,12 @@ nav.nav div.navigation {
 }
 
 nav.nav div.navigation img {
-  width: 130px;
-  height: 130px;
+  width: 110px;
+  height: 110px;
+}
+
+nav.nav div.navigation p {
+  font-weight: 500;
 }
 
 nav.nav div.navigation p.text_left {
@@ -67,8 +71,4 @@ nav.nav div.actions select {
   color: var(--text-color);
   padding: 5px;
   cursor: pointer;
-}
-
-nav.nav div.actions select:hover {
-  border: 1px solid var(--text-color);
 }

@@ -1,3 +1,8 @@
+article.article_home {
+  width: 1160px;
+  margin: 0 auto;
+}
+
 article.article_home section.header {
   display: flex;
   flex-direction: column;
@@ -15,15 +20,81 @@ article.article_home section.header p {
 }
 
 article.article_home section.time {
+  text-align: right;
+  padding-right: 5px;
+}
+
+article.article_home section.time div ul li {
   display: flex;
-  margin: 0 auto;
+  justify-content: flex-end;
+}
+
+article.article_home section.time div ul li input,
+article.article_home section.time div ul li label form {
+  display: none;
+}
+
+article.article_home section.time div ul li label {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+article.article_home section.time div ul li label div {
+  width: 200px;
+  border: 2px solid var(--primary-color);
+  text-align: left;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#submenu:checked ~ label form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 9;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background: var(--white-color);
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid var(--primary-color);
+  width: 220px;
+  gap: 20px;
+}
+
+#submenu:checked ~ label input {
+  display: flex;
   justify-content: center;
 }
 
-article.article_home section.time div {
-  width: 75%;
+article.article_home section.time div ul li label form button {
+  width: 100%;
+  height: 30px;
+  border-radius: 20px;
+  border: 1px solid var(--white-color);
+  background: var(--primary-color);
+  color: var(--white-color);
   display: flex;
-  justify-content: end;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+article.article_home section.time div ul li label form input {
+  background: inherit;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
+}
+
+article.article_home section.time div ul li label form button img {
+  width: 15px;
+  height: 15px;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%)
+    contrast(103%);
 }
 
 article.article_home section.content_card {
@@ -32,7 +103,7 @@ article.article_home section.content_card {
   justify-content: center;
   margin-top: 40px;
   margin-bottom: 80px;
-  gap: 10px;
+  gap: 15px;
 }
 
 article.article_home section.content_card div.card {

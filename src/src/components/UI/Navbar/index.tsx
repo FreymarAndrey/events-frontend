@@ -1,4 +1,4 @@
-import Logo from "../../../assets/icons/logo.jpg";
+import Logo from "../../../assets/logo.webp";
 import Cart from "../../../assets/icons/cart-fill-svgrepo-com.svg";
 import Profile from "../../../assets/icons/profile.svg";
 import styles from "./navbar.module.css";
@@ -20,10 +20,10 @@ export const Navbar = () => {
         <div className={styles.actions}>
           <button>Mis compras</button>
           <div>
-            <img src={Cart} alt="icon" />
+            <img src={Profile} alt="icon" />
           </div>
           <div>
-            <img src={Profile} alt="icon" />
+            <img src={Cart} alt="icon" />
           </div>
 
           <select>

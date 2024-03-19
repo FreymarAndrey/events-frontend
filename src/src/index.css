@@ -31,3 +31,7 @@ select:focus-visible {
 button {
   cursor: pointer;
 }
+
+li {
+  list-style: none;
+}
