@@ -1,11 +1,11 @@
 import { createContext } from "react";
 import { Event } from "src/interfaces/events";
 
-export interface EventsContextType {
+export interface EventsContext {
   events: Event[];
   updateEvents: (newEvents: Event[]) => void;
 }
 
-const EventsContext = createContext<EventsContextType | undefined>(undefined);
-
-export default EventsContext;
+export const EventsContext = createContext<EventsContext | undefined>(
+  undefined
+);

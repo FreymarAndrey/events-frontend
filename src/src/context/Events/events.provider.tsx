@@ -1,6 +1,5 @@
-// events.provider.tsx
-import React, { useReducer } from "react";
-import EventsContext from "./events.context";
+import { useReducer } from "react";
+import { EventsContext } from "src/context/Events/index";
 import { Event } from "src/interfaces/events";
 import eventsReducer from "./events.reducer";
 
@@ -8,7 +7,7 @@ interface EventsProviderProps {
   children: JSX.Element | JSX.Element[];
 }
 
-const EventsProvider: React.FC<EventsProviderProps> = ({ children }) => {
+export const EventsProvider: React.FC<EventsProviderProps> = ({ children }) => {
   const [events, dispatch] = useReducer(eventsReducer, []);
 
   const updateEvents = (newEvents: Event[]) => {
@@ -23,5 +22,3 @@ const EventsProvider: React.FC<EventsProviderProps> = ({ children }) => {
     </EventsContext.Provider>
   );
 };
-
-export default EventsProvider;

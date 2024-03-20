@@ -7,7 +7,7 @@ div.search {
   z-index: -1;
 }
 
-div.search div {
+div.search form {
   position: relative;
   width: 40%;
   display: flex;
@@ -15,7 +15,7 @@ div.search div {
   gap: 10px;
 }
 
-div.search div input {
+div.search form input {
   width: 100%;
   height: 50px;
   padding: 5px;
@@ -23,7 +23,7 @@ div.search div input {
   border: none;
 }
 
-div.search div button {
+div.search form button {
   position: absolute;
   background: inherit;
   border: none;
@@ -35,7 +35,7 @@ div.search div button {
   top: 8px;
 }
 
-div.search div button img {
+div.search form button img {
   filter: invert(33%) sepia(42%) saturate(2731%) hue-rotate(220deg)
     brightness(96%) contrast(103%);
   width: 30px;
