@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Event } from "src/interfaces";
 import { Search } from "src/components/UI/Search";
-import eventsData from "src/data/events/index.json";
 import loading from "src/assets/icons/loading.svg";
 import search from "src/assets/icons/search.svg";
 import styles from "./home.module.css";
@@ -10,6 +9,8 @@ import { LanguageContext } from "src/context/settings";
 import { getFormatDay } from "src/utilities/pipes.utility";
 import { useFormik } from "formik";
 import { FilterValidatorForm } from "src/validator/filter.validator";
+import { publicRoutes } from "src/models";
+import { eventsData } from "src/data/events";
 
 const CardEvents = 12;
 
@@ -126,7 +127,7 @@ export const Home: React.FC = () => {
             )}
           {visibleEvents.map((event, index) => (
             <div className={styles.card} key={index}>
-              <Link to={"/event/" + event.id}>
+              <Link to={`/${publicRoutes.HOME}/evento/${event.id}`}>
                 <div className={styles.img}>
                   <img src={event.image} alt="img" />
                 </div>

@@ -5,7 +5,7 @@ import styles from "./navbar.module.css";
 import { LanguageContext } from "src/context/settings";
 import { ChangeEvent, useContext } from "react";
 import { Link } from "react-router-dom";
-import { publicRoutes } from "src/Models";
+import { publicRoutes } from "src/models";
 
 export const Navbar = () => {
   const languageContext = useContext(LanguageContext);

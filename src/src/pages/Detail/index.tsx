@@ -1,54 +1,74 @@
+import { useEffect, useRef, useState } from "react";
+import { useParams } from "react-router-dom";
+import { Event } from "src/interfaces";
+import { eventsData } from "src/data/events";
+import profile from "src/assets/icons/avatar-profile.svg";
+import camera from "src/assets/icons/camera.svg";
+import upload from "src/assets/icons/upload.svg";
+import styles from "./detail.module.css";
+import { getFormatDay } from "src/utilities/pipes.utility";
+
 export const DetailEvent = () => {
-  return (
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
-      obcaecati ut exercitationem similique dolor ullam natus quisquam vero,
-      labore consequuntur nesciunt! Id magni quis odit nostrum, deserunt
-      possimus magnam! Laboriosam! Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Quaerat, obcaecati ut exercitationem similique dolor
-      ullam natus quisquam vero, labore consequuntur nesciunt! Id magni quis
-      odit nostrum, deserunt possimus magnam! Laboriosam! Lorem ipsum dolor sit
-      amet consectetur adipisicing elit. Quaerat, obcaecati ut exercitationem
-      similique dolor ullam natus quisquam vero, labore consequuntur nesciunt!
-      Id magni quis odit nostrum, deserunt possimus magnam! Laboriosam! Lorem
-      ipsum dolor sit amet consectetur adipisicing elit. Quaerat, obcaecati ut
-      exercitationem similique dolor ullam natus quisquam vero, labore
-      consequuntur nesciunt! Id magni quis odit nostrum, deserunt possimus
-      magnam! Laboriosam! Lorem ipsum dolor sit amet consectetur adipisicing
-      elit. Quaerat, obcaecati ut exercitationem similique dolor ullam natus
-      quisquam vero, labore consequuntur nesciunt! Id magni quis odit nostrum,
-      deserunt possimus magnam! Laboriosam! Lorem ipsum dolor sit amet
-      consectetur adipisicing elit. Eius, cupiditate repellat. Officia amet
-      debitis vel perspiciatis. Id, beatae! Labore, quas numquam assumenda atque
-      eligendi ullam itaque veritatis omnis amet dolorum? Porro adipisci
-      corporis, laudantium itaque illum, veritatis delectus incidunt fugiat
-      beatae, provident qui debitis vero quibusdam! Velit illo, ex excepturi
-      ipsam recusandae quaerat dolores corrupti repellendus dolor commodi, sed
-      repudiandae! Harum impedit a aperiam. Consequuntur eos optio cumque rem
-      modi pariatur quibusdam, similique ab dolores a nulla hic corrupti
-      inventore doloribus doloremque ea cum expedita? Sunt quaerat pariatur
-      natus a! Soluta aspernatur earum quas harum. Veniam aperiam accusantium
-      facere illo molestiae sit repudiandae reiciendis doloribus voluptate ipsum
-      quam eius doloremque soluta in odit at quo, eligendi aspernatur? Adipisci,
-      placeat iure. Quibusdam saepe libero maxime nesciunt! Doloribus suscipit
-      obcaecati laborum sapiente dolorum nemo nesciunt nulla dolores ratione,
-      quasi necessitatibus architecto veritatis exercitationem ut aut quos
-      beatae excepturi eum doloremque ipsa sint! Deleniti officiis quos ad a
-      quas soluta inventore vero. Vero nulla facilis maxime quae? Officiis harum
-      provident cum! Et quod rem fugit numquam commodi consequuntur iste eum in
-      corporis animi! Corrupti neque repellendus aliquam, quia quis dolores
-      cumque dignissimos pariatur doloribus voluptatibus laboriosam aspernatur
-      mollitia magnam sapiente sunt hic soluta provident omnis consequuntur
-      asperiores assumenda unde at! Magnam, iusto quia. Ab enim atque in nemo?
-      Dolore saepe nam voluptates vel id autem deleniti sapiente aut, itaque
-      magnam fugiat temporibus reprehenderit harum labore iusto ullam eaque,
-      quaerat numquam earum eos blanditiis? Laborum reprehenderit saepe
-      provident quasi assumenda nesciunt praesentium quis aperiam debitis,
-      tenetur deleniti at ullam obcaecati ipsum deserunt fugiat accusantium
-      nihil animi facilis alias enim et quia aut vel? Reprehenderit. Aut
-      suscipit impedit ratione quas tempora in vero perspiciatis architecto,
-      quod ipsa reiciendis rerum porro totam. Rerum, doloribus repellat. Harum
-      ipsam consequatur, eius vero provident quia maxime temporibus autem unde!
-    </div>
+  const { id } = useParams();
+  const [event, setEvent] = useState<Event | null>(null);
+  const initialized = useRef<boolean>(false);
+
+  useEffect(() => {
+    if (initialized.current === false) {
+      initialized.current = true;
+      const eventData = eventsData.find(
+        ({ id: idEvent }) => idEvent === parseInt(id || "0")
+      );
+      if (eventData) {
+        setEvent(eventData);
+      }
+    }
+  }, []);
+
+  //   const openCamera = async () => {
+  //     try {
+  //       const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+  //       const videoElement = document.createElement("video");
+  //       videoElement.srcObject = stream;
+  //       videoElement.play();
+  //       document.body.appendChild(videoElement);
+  //     } catch (error) {
+  //       console.error("Error al acceder a la cámara:", error);
+  //     }
+  //   };
+
+  return !event ? (
+    <h1>no hay nada</h1>
+  ) : (
+    <>
+      <article className={styles.article_detail}>
+        <section className={styles.header}>
+          <div className={styles.info}>
+            <h3 className={styles.title}>Fotos {event.name}</h3>
+            <p>
+              {getFormatDay(event.date)}, Evento por project-x. Busca tu foto
+            </p>
+          </div>
+          <div>
+            <img src={profile} alt="icon" />
+            <h3>
+              Reconocimiento facial {id}
+              <br />
+              <span> tomate una selfie o sube una foto</span>
+            </h3>
+            <button className={styles.button_camera}>
+              <img src={upload} alt="icon" className={styles.upload} />
+              <img src={camera} alt="icon" />
+            </button>
+          </div>
+          <button className={styles.not_ident}>Fotos no identificadas</button>
+        </section>
+        <section className={styles.container_images}>
+          {event.images.map((image, index) => (
+            <img key={index} src={image} alt={`${index}`} />
+          ))}
+        </section>
+      </article>
+    </>
   );
 };

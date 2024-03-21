@@ -1,0 +1,103 @@
+article.article_detail {
+  width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px;
+}
+
+article.article_detail section.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+article.article_detail section.header div.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+article.article_detail section.header h3.title {
+  font-size: 30px;
+  color: var(--primary-color);
+}
+
+article.article_detail section.header div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+article.article_detail section.header div img {
+  width: 50px;
+  height: 100%;
+}
+
+article.article_detail section.header div h3 {
+  font-size: 20px;
+}
+
+article.article_detail section.header div h3 span {
+  font-size: 14px;
+}
+
+article.article_detail section.header div button.button_camera {
+  background-color: inherit;
+  border: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: var(--primary-color);
+  width: 70px;
+  border-radius: 8px;
+}
+
+article.article_detail section.header div button.button_camera img {
+  filter: invert(98%) sepia(34%) saturate(216%) hue-rotate(297deg)
+    brightness(119%) contrast(100%);
+}
+
+article.article_detail section.header div button.button_camera img.upload {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 5px;
+  top: 15px;
+}
+
+article.article_detail section.header button.not_ident {
+  height: 35px;
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  background: none;
+}
+
+article.article_detail section.header button.not_ident:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+article.article_detail section.container_images {
+  display: grid;
+  grid-template-columns: repeat(4, 280px);
+  gap: 15px;
+}
+
+article.article_detail section.container_images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
