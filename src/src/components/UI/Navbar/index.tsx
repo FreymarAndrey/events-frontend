@@ -18,11 +18,17 @@ export const Navbar = () => {
     if (name === "language") setLanguage(value);
   };
 
+  const reload = () => {
+    setTimeout(() => {
+      location.reload();
+    }, 300);
+  };
+
   return (
     <>
       <nav className={styles.nav}>
         <div className={styles.navigation}>
-          <Link to="/">
+          <Link to={"/"} onClick={reload}>
             <img src={Logo} alt="icon" />
           </Link>
 
@@ -31,7 +37,7 @@ export const Navbar = () => {
             <br />
             {translated_text.photo}
           </p>
-          <Link to="/">
+          <Link to={"/"} onClick={reload}>
             <p> {translated_text.events}</p>
           </Link>
           <Link to={"/" + publicRoutes.ABOUTUS}>

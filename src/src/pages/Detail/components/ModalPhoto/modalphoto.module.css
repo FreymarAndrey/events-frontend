@@ -1,0 +1,111 @@
+article.article_modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+article.article_modal div.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  cursor: pointer;
+  background: rgba(40, 40, 40, 0.8);
+}
+
+article.article_modal section {
+  position: relative;
+  z-index: 10;
+  background: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+article.article_modal section h4 {
+  font-size: 20px;
+}
+
+article.article_modal section form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+}
+
+article.article_modal section form div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+article.article_modal section form div button {
+  height: 35px;
+  border-radius: 8px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  border: none;
+  background: none;
+  width: 150px;
+  text-align: center;
+  justify-content: center;
+}
+
+article.article_modal section form div button.webcam {
+  background: var(--primary-color);
+  color: var(--white-color);
+  font-weight: 500;
+}
+
+article.article_modal section form div input {
+  display: none;
+}
+
+article.article_modal section form div label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 10px 20px;
+  height: 35px;
+  width: 150px;
+  border: 1px solid var(--primary-color);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.webcam_video {
+  width: 200px;
+  height: 200px;
+}
+
+.capturedImage {
+  width: 100%;
+}
+
+button.captureButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 10px 20px;
+  height: 35px;
+  width: 150px;
+  border: 1px solid var(--primary-color);
+  cursor: pointer;
+  font-weight: 500;
+  background: none;
+}

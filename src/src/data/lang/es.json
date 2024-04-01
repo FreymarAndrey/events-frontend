@@ -11,6 +11,22 @@
     "period": "Periodo",
     "load_more": "Cargar más...",
     "attenment_client": "Atención al cliente",
-    "shop_by": "Tienda por:"
+    "shop_by": "Tienda por:",
+    "log_in": "Iniciar sesión",
+    "dont_have_an_account_yet": "¿Aún no tienes cuenta?",
+    "click_here": "has click aquí",
+    "Enter_your_login_email": "Ingresa tu correo de acceso",
+    "Enter_your_password": "Ingresa tu contraseña",
+    "remember_password": "Recordar contraseña",
+    "forgot_your_password": "¿Olvidaste tu contraseña?",
+    "access_code": "Codigó de acceso",
+    "password_recovery": "Recuperación de contraseña",
+    "enter_your_email_or_ID_to_receive_a_new_password": "Ingresa tu email o identificación para recibir una nueva contraseña.",
+    "send": "Enviar",
+    "photos": "Fotos",
+    "event_by_project_x_search_for_your_photo": "Evento por project-x. Busca tu foto",
+    "facial_recognition": "Reconocimiento facial",
+    "take_a_selfie_or_upload_a_photo": "tomate una selfie o sube una foto",
+    "photos_not_identified": "Fotos no identificadas"
   }
   

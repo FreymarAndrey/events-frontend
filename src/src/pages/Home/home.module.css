@@ -1,6 +1,7 @@
 article.article_home {
   width: 1160px;
   margin: 0 auto;
+  position: relative;
 }
 
 article.article_home section.header {
@@ -27,10 +28,13 @@ article.article_home section.time {
 article.article_home section.time div ul li {
   display: flex;
   justify-content: flex-end;
+  position: relative;
 }
 
-article.article_home section.time div ul li input,
-article.article_home section.time div ul li label form {
+article.article_home section.time div ul li input {
+  display: none;
+}
+article.article_home section.time div ul li form {
   display: none;
 }
 
@@ -49,7 +53,7 @@ article.article_home section.time div ul li label div {
   cursor: pointer;
 }
 
-#submenu:checked ~ label form {
+#submenu:checked ~ form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -65,12 +69,11 @@ article.article_home section.time div ul li label div {
   gap: 20px;
 }
 
-#submenu:checked ~ label input {
+#submenu:checked ~ form input {
   display: flex;
-  justify-content: center;
 }
 
-article.article_home section.time div ul li label form button {
+article.article_home section.time div ul li form button {
   width: 100%;
   height: 30px;
   border-radius: 20px;
@@ -83,14 +86,19 @@ article.article_home section.time div ul li label form button {
   gap: 20px;
 }
 
-article.article_home section.time div ul li label form input {
+article.article_home section.time div ul li form p {
+  text-align: center;
+  color: red;
+}
+
+article.article_home section.time div ul li form input {
   background: inherit;
   width: 100%;
   border: none;
   border-bottom: 1px solid var(--primary-color);
 }
 
-article.article_home section.time div ul li label form button img {
+article.article_home section.time div ul li form button img {
   width: 15px;
   height: 15px;
   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%)

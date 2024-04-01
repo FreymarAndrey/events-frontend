@@ -5,4 +5,5 @@ export const publicRoutes = {
   DETAIL: "evento/:id",
   MYORDERS: "mis-compras",
   ABOUTUS: "nosotros",
+  FORGOT: "recuperar-contraseña",
 };

@@ -11,6 +11,22 @@
     "period": "Period",
     "load_more": "Load more...",
     "attenment_client": "Attenment client",
-    "shop_by": "Shop By:"
+    "shop_by": "Shop By:",
+    "log_in": "Log in",
+    "dont_have_an_account_yet": "Don't have an account yet?",
+    "click_here": "click here",
+    "Enter_your_login_email": "Enter your login email",
+    "Enter_your_password": "Enter your password",
+    "remember_password": "remember password",
+    "forgot_your_password": "¿Forgot your password?",
+    "access_code": "Access code",
+    "password_recovery": "Password recovery",
+    "enter_your_email_or_ID_to_receive_a_new_password": "Enter your email or ID to receive a new password",
+    "send": "Send",
+    "photos": "Photos",
+    "event_by_project_x_search_for_your_photo": "Event by project-x. Search for your photo",
+    "facial_recognition": "Facial recognition",
+    "take_a_selfie_or_upload_a_photo": "take a selfie or upload a photo",
+    "photos_not_identified": "Photos not identified"
   }
   

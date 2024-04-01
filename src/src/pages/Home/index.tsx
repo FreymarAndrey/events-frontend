@@ -11,6 +11,7 @@ import { useFormik } from "formik";
 import { FilterValidatorForm } from "src/validator/filter.validator";
 import { publicRoutes } from "src/models";
 import { eventsData } from "src/data/events";
+import { ScrollTop } from "src/components/UI/scrollTop";
 
 const CardEvents = 12;
 
@@ -19,7 +20,9 @@ export const Home: React.FC = () => {
   const [allEvents, setAllEvents] = useState<Event[]>([]);
   const [visibleEvents, setVisibleEvents] = useState<Event[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [searchText, setSearchText] = useState<string>("");
+  const [_, setSearchText] = useState<string>("");
+  const [showAlert, setShowAlert] = useState<boolean>(false);
+  const [searched, setSearched] = useState<boolean>(false);
 
   const languageContext = useContext(LanguageContext);
   const { LanguageState } = languageContext;
@@ -35,21 +38,35 @@ export const Home: React.FC = () => {
 
   const formik = useFormik({
     initialValues: FilterValidatorForm.initialState,
+    validationSchema: FilterValidatorForm.validatorSchemaFilter,
     onSubmit: (values) => {
-      setIsLoading(true);
-      if (values.start_date && values.end_date) {
-        const filteredEvents = allEvents.filter((event) => {
-          const eventDate = new Date(event.date);
-          const startDate = new Date(values.start_date);
-          const endDate = new Date(values.end_date);
-          return eventDate >= startDate && eventDate <= endDate;
-        });
-        setVisibleEvents(filteredEvents);
-        setIsLoading(false);
-      } else {
-        setVisibleEvents(allEvents.slice(0, CardEvents));
-        setIsLoading(false);
-      }
+      formik.validateForm(values).then((errors) => {
+        if (Object.keys(errors).length === 0) {
+          if (values.start_date && values.end_date) {
+            const startDate = new Date(values.start_date);
+            const endDate = new Date(values.end_date);
+
+            if (endDate < startDate) {
+              setShowAlert(true);
+            } else {
+              setShowAlert(false);
+              setIsLoading(true);
+              const filteredEvents = allEvents.filter((event) => {
+                const eventDate = new Date(event.date);
+                return eventDate >= startDate && eventDate <= endDate;
+              });
+              setVisibleEvents(filteredEvents);
+              setIsLoading(false);
+              setSearched(true);
+            }
+          } else {
+            setVisibleEvents(allEvents.slice(0, CardEvents));
+          }
+        } else {
+          setShowAlert(false);
+          alert("Las fechas son incorrectas");
+        }
+      });
     },
   });
 
@@ -67,18 +84,21 @@ export const Home: React.FC = () => {
     if (text.trim() === "") {
       setVisibleEvents(allEvents.slice(0, CardEvents));
       setIsLoading(false);
+      setSearched(false);
     } else {
       const filteredEvents = allEvents.filter((event) =>
         event.name.toLowerCase().includes(text.toLowerCase())
       );
       setVisibleEvents(filteredEvents);
       setIsLoading(false);
+      setSearched(true);
     }
   };
 
   return (
     <>
       <Search onSearch={handleSearch} />
+
       <article className={styles.article_home}>
         <section className={styles.header}>
           <h3>{translated_text.latest_events}</h3>
@@ -96,35 +116,44 @@ export const Home: React.FC = () => {
                 />
                 <label htmlFor={styles.submenu}>
                   <div>{translated_text.period}</div>
-                  <form onSubmit={formik.handleSubmit}>
-                    Fecha de inicio
-                    <input
-                      type="date"
-                      name="start_date"
-                      value={formik.values.start_date}
-                      onChange={formik.handleChange}
-                    />
-                    <input
-                      type="date"
-                      name="end_date"
-                      value={formik.values.end_date}
-                      onChange={formik.handleChange}
-                    />
-                    <button type="submit">
-                      Filtro <img src={search} alt="" />
-                    </button>
-                  </form>
                 </label>
+
+                <form onSubmit={formik.handleSubmit}>
+                  Fecha de inicio
+                  <input
+                    type="date"
+                    name="start_date"
+                    value={formik.values.start_date}
+                    onChange={formik.handleChange}
+                  />
+                  Fecha final
+                  <input
+                    type="date"
+                    name="end_date"
+                    value={formik.values.end_date}
+                    onChange={formik.handleChange}
+                  />
+                  {formik.errors.start_date && (
+                    <p>{formik.errors.start_date}</p>
+                  )}
+                  {formik.errors.end_date && <p>{formik.errors.end_date}</p>}
+                  {showAlert && (
+                    <p className={styles.alert}>
+                      La fecha final debe ser mayor que la fecha inicial
+                    </p>
+                  )}
+                  <button type="submit">
+                    Filtro <img src={search} alt="" />
+                  </button>
+                </form>
               </li>
             </ul>
           </div>
         </section>
         <section className={styles.content_card}>
-          {visibleEvents.length === 0 &&
-            !isLoading &&
-            searchText.trim() !== "" && (
-              <p>No se encontraron eventos con la búsqueda "{searchText}".</p>
-            )}
+          {visibleEvents.length === 0 && searched && !isLoading && (
+            <p>No se encontraron eventos con los criterios de búsqueda.</p>
+          )}
           {visibleEvents.map((event, index) => (
             <div className={styles.card} key={index}>
               <Link to={`/${publicRoutes.HOME}/evento/${event.id}`}>
@@ -157,6 +186,7 @@ export const Home: React.FC = () => {
               </div>
             </section>
           )}
+        <ScrollTop />
       </article>
     </>
   );

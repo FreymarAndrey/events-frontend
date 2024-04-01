@@ -1,0 +1,17 @@
+div.content_arrow {
+  position: fixed;
+  top: 70%;
+  right: 2%;
+}
+
+div.content_arrow button {
+  background: inherit;
+  border: none;
+}
+
+div.content_arrow button img {
+  width: 50px;
+  height: 50px;
+  filter: invert(33%) sepia(42%) saturate(2731%) hue-rotate(220deg)
+    brightness(96%) contrast(103%);
+}

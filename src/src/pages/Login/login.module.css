@@ -25,7 +25,7 @@ article.login div.header p a {
 article.login div.form {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 35%;
 }
 
 article.login div.form form.form_login div {
@@ -77,6 +77,10 @@ article.login div.buttons {
   display: flex;
   flex-direction: row;
   gap: 20px;
+}
+
+article.login div.buttons button {
+  width: 180px;
 }
 
 article.login div.buttons button.cod {

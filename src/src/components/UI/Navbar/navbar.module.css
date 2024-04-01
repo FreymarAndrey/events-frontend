@@ -6,7 +6,6 @@ nav.nav {
     0 8px 10px -6px rgb(0 0 0 / 0.1);
   border-radius: 0px 0px 5px 5px;
   padding: 0 40px;
-  margin-bottom: 50px;
 }
 
 nav.nav {
@@ -28,6 +27,7 @@ nav.nav div.navigation img {
 
 nav.nav div.navigation p {
   font-weight: 500;
+  font-size: 18px;
 }
 
 nav.nav div.navigation p.text_left {
