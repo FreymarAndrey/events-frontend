@@ -98,3 +98,37 @@ article.login div.buttons button.start {
   color: var(--white-color);
   padding: 10px 20px;
 }
+
+@media (max-width: 500px) {
+  article.login {
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  article.login div.form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  article.login div.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  article.login div.form form.form_login div.actions label {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  article.login div.form form.form_login div.actions div a {
+    font-size: 14px;
+  }
+
+  article.login div.form form.form_login div.actions div {
+    grid-column-end: 3;
+    align-items: center;
+    width: 100%;
+  }
+}

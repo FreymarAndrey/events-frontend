@@ -89,15 +89,61 @@ article.article_detail section.header button.not_ident:hover {
   color: var(--white-color);
 }
 
-article.article_detail section.container_images {
+article.article_detail section.container_images figure {
   display: grid;
   grid-template-columns: repeat(4, 280px);
   gap: 15px;
 }
 
-article.article_detail section.container_images img {
+article.article_detail section.container_images figure img {
   width: 100%;
-  height: 100%;
+  height: 280px;
   object-fit: cover;
   border-radius: 8px;
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  article.article_detail {
+    width: auto;
+  }
+
+  article.article_detail section.container_images figure {
+    display: grid;
+    grid-template-columns: repeat(3, 280px);
+  }
+}
+
+@media (max-width: 900px) {
+  article.article_detail {
+    width: auto;
+  }
+
+  article.article_detail section.container_images figure {
+    display: grid;
+    grid-template-columns: repeat(2, 280px);
+  }
+}
+
+@media (max-width: 500px) {
+  article.article_detail {
+    width: auto;
+  }
+
+  article.article_detail section.header div {
+    gap: 10px;
+  }
+
+  article.article_detail section.container_images figure {
+    display: grid;
+    grid-template-columns: repeat(2, 160px);
+    gap: 15px;
+    justify-content: center;
+  }
+
+  article.article_detail section.container_images figure img {
+    width: 100%;
+    height: 190px;
+    object-fit: fill;
+  }
 }

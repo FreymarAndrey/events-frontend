@@ -4,7 +4,6 @@ div.search {
   padding: 20px;
   width: 100%;
   background: var(--primary-color);
-  z-index: -1;
 }
 
 div.search form {
@@ -40,4 +39,14 @@ div.search form button img {
     brightness(96%) contrast(103%);
   width: 30px;
   height: 30px;
+}
+
+@media (max-width: 500px) {
+  div.search form {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
 }

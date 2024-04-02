@@ -1,6 +1,6 @@
 nav.nav {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
     0 8px 10px -6px rgb(0 0 0 / 0.1);
@@ -10,6 +10,18 @@ nav.nav {
 
 nav.nav {
   border-top: 4px solid var(--primary-color);
+}
+
+nav.nav section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0;
+}
+
+nav.nav section img.cart,
+div.menu {
+  position: absolute;
 }
 
 nav.nav div.navigation {
@@ -51,6 +63,7 @@ nav.nav div.actions div img {
   height: 25px;
   filter: invert(33%) sepia(42%) saturate(2731%) hue-rotate(220deg)
     brightness(96%) contrast(103%);
+  cursor: pointer;
 }
 
 nav.nav div.actions button {
@@ -72,4 +85,109 @@ nav.nav div.actions select {
   color: var(--text-color);
   padding: 5px;
   cursor: pointer;
+}
+
+nav.nav section div.menu_mobile,
+nav.nav div.mobile {
+  display: none;
+}
+
+nav.nav section img.cart {
+  display: none;
+}
+
+@media (max-width: 750px) {
+  nav.nav {
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  nav.nav section {
+    align-items: center;
+  }
+
+  nav.nav section div.menu_mobile {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  nav.nav div.navigation {
+    gap: 15px;
+  }
+
+  nav.nav section img.cart,
+  div.menu {
+    position: relative;
+  }
+
+  nav.nav div.navigation p.text_left {
+    font-size: 16px;
+  }
+
+  nav.nav div.actions {
+    display: none;
+  }
+
+  nav.nav div.navigation img {
+    width: 70px;
+    height: 70px;
+  }
+
+  nav.nav div.navigation a p {
+    display: none;
+  }
+
+  nav.nav div.mobile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav.nav section img.cart {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    filter: invert(33%) sepia(42%) saturate(2731%) hue-rotate(220deg)
+      brightness(96%) contrast(103%);
+  }
+
+  nav.nav section div.menu {
+    display: flex;
+    flex-direction: column;
+    width: 30px;
+    height: 30px;
+    background-image: url(../../../assets/icons/menu-mobile.svg);
+    background-size: cover;
+    cursor: pointer;
+    filter: invert(33%) sepia(42%) saturate(2731%) hue-rotate(220deg)
+      brightness(96%) contrast(103%);
+  }
+
+  nav.nav div.mobile {
+    background: var(--white-color);
+  }
+
+  nav.nav div.mobile div.option_menu {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+
+  nav.nav div.mobile div.option_menu a {
+    color: var(--text-color);
+    border-bottom: 1px solid var(--primary-color);
+  }
+
+  nav.nav div.mobile div.option_menu select.select {
+    background: none;
+    border: none;
+    color: var(--text-color);
+  }
 }

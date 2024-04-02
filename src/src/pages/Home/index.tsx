@@ -11,7 +11,7 @@ import { useFormik } from "formik";
 import { FilterValidatorForm } from "src/validator/filter.validator";
 import { publicRoutes } from "src/models";
 import { eventsData } from "src/data/events";
-import { ScrollTop } from "src/components/UI/scrollTop";
+import { ScrollTop } from "src/components/UI/ScrollTop";
 
 const CardEvents = 12;
 

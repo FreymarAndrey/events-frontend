@@ -1,0 +1,25 @@
+article.content_cart {
+  width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 20px;
+}
+
+article.content_cart h3 {
+  color: var(--primary-color);
+}
+
+article.content_cart p a {
+  color: var(--primary-color);
+}
+
+@media (max-width: 500px) {
+  article.content_cart {
+    width: auto;
+    text-align: center;
+  }
+}

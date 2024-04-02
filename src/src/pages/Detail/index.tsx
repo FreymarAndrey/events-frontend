@@ -54,7 +54,7 @@ export const DetailEvent = () => {
           <div>
             <img src={profile} alt="icon" />
             <h3>
-              {translated_text.facial_recognition} {id}
+              {translated_text.facial_recognition}
               <br />
               <span> {translated_text.take_a_selfie_or_upload_a_photo} </span>
             </h3>
@@ -68,9 +68,11 @@ export const DetailEvent = () => {
           </button>
         </section>
         <section className={styles.container_images}>
-          {event.images.map((image, index) => (
-            <img key={index} src={image} alt={`${index}`} />
-          ))}
+          <figure>
+            {event.images.map((image, index) => (
+              <img key={index} src={image} alt={`${index}`} />
+            ))}
+          </figure>
         </section>
 
         {modalVisible && (

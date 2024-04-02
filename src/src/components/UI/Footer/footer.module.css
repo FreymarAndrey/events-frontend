@@ -31,3 +31,29 @@ footer.footer div.container_bottom small {
   font-size: 24px;
   font-weight: bold;
 }
+
+@media (max-width: 500px) {
+  footer.footer div.container_top {
+    padding: 20px;
+  }
+
+  footer.footer div.container_top p {
+    font-size: 14px;
+  }
+
+  footer.footer div.container_bottom {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  footer.footer div.container_bottom p {
+    font-size: 14px;
+  }
+  footer.footer div.container_bottom small {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}

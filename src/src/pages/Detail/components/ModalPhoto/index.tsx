@@ -8,6 +8,7 @@ type Props = {
 export const ModalPhoto = ({ closeModal }: Props) => {
   const modalRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [isCameraOpen, setIsCameraOpen] = useState<boolean>(false);
   const [capturedPhoto, setCapturedPhoto] = useState<string | null>(null);
 
   useEffect(() => {
@@ -19,11 +20,14 @@ export const ModalPhoto = ({ closeModal }: Props) => {
 
   const openCamera = async () => {
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: true,
+      });
       if (videoRef.current) {
         videoRef.current.srcObject = stream;
         videoRef.current.play();
         videoRef.current.classList.add(styles.webcam_video);
+        setIsCameraOpen(true);
       }
     } catch (error) {}
   };
@@ -86,13 +90,15 @@ export const ModalPhoto = ({ closeModal }: Props) => {
               className={styles.capturedImage}
             />
           )}
-          <button
-            type="button"
-            onClick={capturePhoto}
-            className={styles.captureButton}
-          >
-            Capturar Foto
-          </button>
+          {isCameraOpen && (
+            <button
+              type="button"
+              onClick={capturePhoto}
+              className={styles.captureButton}
+            >
+              Capturar Foto
+            </button>
+          )}
         </section>
       </article>
     </>

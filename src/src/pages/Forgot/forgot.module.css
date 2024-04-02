@@ -47,3 +47,14 @@ article.article_forgot section form button {
   border-radius: 5px;
   width: 150px;
 }
+
+@media (max-width: 500px) {
+  article.article_forgot {
+    width: auto;
+    padding: 10px;
+  }
+
+  article.article_forgot section {
+    width: 100%;
+  }
+}

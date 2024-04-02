@@ -93,10 +93,11 @@ article.article_modal section form div label {
 }
 
 .capturedImage {
-  width: 100%;
+  width: 200px;
+  height: 200px;
 }
 
-button.captureButton {
+article section button.captureButton {
   display: flex;
   align-items: center;
   justify-content: center;

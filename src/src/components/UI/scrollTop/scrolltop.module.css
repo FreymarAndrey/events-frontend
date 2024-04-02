@@ -15,3 +15,9 @@ div.content_arrow button img {
   filter: invert(33%) sepia(42%) saturate(2731%) hue-rotate(220deg)
     brightness(96%) contrast(103%);
 }
+
+@media (max-width: 500px) {
+  div.content_arrow {
+    display: none;
+  }
+}
