@@ -1,0 +1,60 @@
+section.section_webcam {
+  background: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+section.section_webcam div.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  cursor: pointer;
+  z-index: -1;
+}
+
+section.section_webcam video {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+section.section_webcam img.capturedImage {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+section.section_webcam div.container_button {
+  display: flex;
+  gap: 10px;
+}
+
+section.section_webcam div.container_button button {
+  height: 35px;
+  border-radius: 8px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  border: none;
+  background: none;
+  width: 150px;
+  text-align: center;
+  justify-content: center;
+}
+
+section.section_webcam div.container_button button.button_capture {
+  background: var(--primary-color);
+  color: var(--white-color);
+  font-weight: 500;
+}
+
+section.section_webcam div.container_button button.button_close {
+  border: 1px solid var(--primary-color);
+}

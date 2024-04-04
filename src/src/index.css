@@ -53,3 +53,7 @@ article.article_principal {
   flex-direction: column;
   justify-content: center;
 }
+
+.hidden {
+  display: none;
+}

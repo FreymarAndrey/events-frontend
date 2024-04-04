@@ -17,7 +17,7 @@ article.article_modal div.overlay {
   background: rgba(40, 40, 40, 0.8);
 }
 
-article.article_modal section {
+article.article_modal section.section_photo:not(.hidden) {
   position: relative;
   z-index: 10;
   background: #fff;
@@ -29,13 +29,20 @@ article.article_modal section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 500px;
 }
 
-article.article_modal section h4 {
+article.article_modal section.section_photo div.content_description {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+article.article_modal section.section_photo div.content_description h4 {
   font-size: 20px;
 }
 
-article.article_modal section form {
+article.article_modal section.section_photo div.content_description form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,7 +50,7 @@ article.article_modal section form {
   align-items: center;
 }
 
-article.article_modal section form div {
+article.article_modal section.section_photo div.content_description form div {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -51,7 +58,12 @@ article.article_modal section form div {
   gap: 10px;
 }
 
-article.article_modal section form div button {
+article.article_modal
+  section.section_photo
+  div.content_description
+  form
+  div
+  button {
   height: 35px;
   border-radius: 8px;
   padding: 10px 20px;
@@ -64,17 +76,32 @@ article.article_modal section form div button {
   justify-content: center;
 }
 
-article.article_modal section form div button.webcam {
+article.article_modal
+  section.section_photo
+  div.content_description
+  form
+  div
+  button.webcam {
   background: var(--primary-color);
   color: var(--white-color);
   font-weight: 500;
 }
 
-article.article_modal section form div input {
+article.article_modal
+  section.section_photo
+  div.content_description
+  form
+  div
+  input {
   display: none;
 }
 
-article.article_modal section form div label {
+article.article_modal
+  section.section_photo
+  div.content_description
+  form
+  div
+  label {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -85,16 +112,6 @@ article.article_modal section form div label {
   border: 1px solid var(--primary-color);
   cursor: pointer;
   font-weight: 500;
-}
-
-.webcam_video {
-  width: 200px;
-  height: 200px;
-}
-
-.capturedImage {
-  width: 200px;
-  height: 200px;
 }
 
 article section button.captureButton {
@@ -109,4 +126,88 @@ article section button.captureButton {
   cursor: pointer;
   font-weight: 500;
   background: none;
+}
+
+article.article_modal section.section_photo div.content_img img.preview_img {
+  width: 150px;
+  height: 150px;
+}
+
+article.article_modal section.section_photo div.content_img div.content_button {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+div.content_button button {
+  height: 35px;
+  border-radius: 8px;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: none;
+  background: none;
+  width: 150px;
+  text-align: center;
+  justify-content: center;
+}
+
+div.content_button button.button_replace {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+div.content_button button.button_search {
+  background-color: var(--white-color);
+  border: 1px solid var(--primary-color);
+}
+
+.hidden {
+  display: none !important;
+}
+
+article.article_modal
+  section.section_photo
+  div.content_img
+  div.content_button
+  button.button_cut {
+  position: absolute;
+  width: auto;
+  top: 50px;
+  right: 70px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+article.article_modal
+  section.section_photo
+  div.content_img
+  div.content_button
+  button.button_cut::after {
+  content: "cortar";
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-radius: 5px;
+  padding: 2px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+article.article_modal
+  section.section_photo
+  div.content_img
+  div.content_button
+  button.button_cut:hover::after {
+  opacity: 1;
+}
+
+article.article_modal
+  section.section_photo
+  div.content_img
+  div.content_button
+  button.button_cut
+  img.cut_button {
+  width: 30px;
+  height: 30px;
 }
