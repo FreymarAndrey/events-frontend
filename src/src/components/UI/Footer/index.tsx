@@ -17,7 +17,8 @@ export const Footer = () => {
         <div className={styles.container_bottom}>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           <p>
-            {translated_text.shop_by} <small>project-x</small>
+            {translated_text.shop_by}{" "}
+            <small>{translated_text.events_frontend}</small>
           </p>
         </div>
       </footer>

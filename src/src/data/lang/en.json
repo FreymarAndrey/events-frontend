@@ -24,9 +24,10 @@
     "enter_your_email_or_ID_to_receive_a_new_password": "Enter your email or ID to receive a new password",
     "send": "Send",
     "photos": "Photos",
-    "event_by_project_x_search_for_your_photo": "Event by project-x. Search for your photo",
+    "event_by_project_x_search_for_your_photo": "Event by events-frontend. Search for your photo",
     "facial_recognition": "Facial recognition",
     "take_a_selfie_or_upload_a_photo": "take a selfie or upload a photo",
-    "photos_not_identified": "Photos not identified"
+    "photos_not_identified": "Photos not identified",
+    "events_frontend": "events_frontend"
   }
   
